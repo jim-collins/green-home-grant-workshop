@@ -20,3 +20,4 @@ React 18 + Vite 5 + react-router-dom 6 eligibility checker (GOV.UK style, WCAG 2
 - On-screen wording is "partially eligible"; code uses `partial`.
 
 ## Common mistakes
+- `<dd>`/`<dt>` have a default left margin: reset it on summary list items or the page scrolls sideways at 320px (found on Check your answers).

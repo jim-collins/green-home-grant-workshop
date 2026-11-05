@@ -475,3 +475,10 @@ h1:focus {
 .govuk-list--bullet {
   list-style-type: disc;
 }
+
+/* Description list items have a default left margin that causes sideways scrolling at 320px */
+.govuk-summary-list__key,
+.govuk-summary-list__value,
+.govuk-summary-list__actions {
+  margin: 0;
+}

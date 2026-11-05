@@ -37,3 +37,17 @@ export function previousPath(key, changing) {
   const index = QUESTIONS.findIndex((q) => q.key === key);
   return index === 0 ? '/' : QUESTIONS[index - 1].path;
 }
+
+// A result can be shown after a full set of answers, or once an answer ended the journey.
+export function canShowResult(answers) {
+  return isComplete(answers) || endingIndex(answers) !== -1;
+}
+
+export function backFromResult(answers) {
+  const end = endingIndex(answers);
+  return end === -1 ? '/check-answers' : QUESTIONS[end].path;
+}
+
+export function endedEarly(answers) {
+  return endingIndex(answers) !== -1;
+}

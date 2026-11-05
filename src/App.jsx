@@ -32,8 +32,8 @@ function App() {
                 element={<QuestionPage key={question.key} question={question} answers={answers} setAnswers={setAnswers} />}
               />
             ))}
-            <Route path="/check-answers" element={<CheckAnswersPage />} />
-            <Route path="/result" element={<ResultPage />} />
+            <Route path="/check-answers" element={<CheckAnswersPage answers={answers} />} />
+            <Route path="/result" element={<ResultPage answers={answers} setAnswers={setAnswers} />} />
             <Route path="/accessibility-statement" element={<AccessibilityStatementPage />} />
           </Routes>
         </main>

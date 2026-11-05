@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { NO_ANSWERS } from '../data/questions';
-import { nextPath, previousPath, relevantAnswers, isComplete } from './journey';
+import { nextPath, previousPath, relevantAnswers, isComplete, backFromResult, canShowResult } from './journey';
 
 const full = {
   propertyType: 'detached',
@@ -72,5 +72,24 @@ describe('isComplete', () => {
   it('is true only when every question has an answer', () => {
     expect(isComplete(full)).toBe(true);
     expect(isComplete({ ...full, heating: '' })).toBe(false);
+  });
+});
+
+describe('backFromResult', () => {
+  it('goes back to the question that ended the journey', () => {
+    expect(backFromResult({ ...NO_ANSWERS, propertyType: 'detached', ownership: 'rent-private' })).toBe('/ownership');
+    expect(backFromResult({ ...NO_ANSWERS, propertyType: 'flat' })).toBe('/property-type');
+  });
+  it('goes back to Check your answers after a full journey', () => {
+    expect(backFromResult(full)).toBe('/check-answers');
+  });
+});
+
+describe('canShowResult', () => {
+  it('is true for a full journey or an early exit, false for no answers', () => {
+    expect(canShowResult(full)).toBe(true);
+    expect(canShowResult({ ...NO_ANSWERS, propertyType: 'flat' })).toBe(true);
+    expect(canShowResult(NO_ANSWERS)).toBe(false);
+    expect(canShowResult({ ...NO_ANSWERS, propertyType: 'detached' })).toBe(false);
   });
 });

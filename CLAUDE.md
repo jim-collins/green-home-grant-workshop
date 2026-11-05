@@ -3,7 +3,7 @@
 React 18 + Vite 5 + react-router-dom 6 eligibility checker (GOV.UK style, WCAG 2.2 AA). Read `intent.md`, `spec.md`, `plan.md` first; rules are in `docs/eligibility-rules.md`.
 
 ## Commands
-- `npm run dev` — dev server on port 5002 (lab host, https://<hostname>:5002). Do not change the `server` block in `vite.config.js`.
+- `VITE_PORT=5000 VITE_PUBLIC_HOSTNAME=app-lab11126.labs.decoded.com npm run dev` — dev server for the lab address https://app-lab11126.labs.decoded.com/proxy/ (that address maps to port 5000, and the router handles the `/proxy` prefix). Plain `npm run dev` uses port 5002. Do not change the `server` block in `vite.config.js`.
 - `npm test` — Vitest (jsdom). Example: `Tests  14 passed (14)`
 - `npm run build` then `npm run preview` — production build, used for Lighthouse.
 - Contrast/Lighthouse on saved pages: `~/.claude/skills/new-project/scripts/lighthouse-pages.sh --dir tests/pages --css dist/assets/index-*.css`

@@ -14,7 +14,7 @@ Date of automated checks: 2026-11-05. Manual checks below are **not done yet**: 
 
 ## Manual (the user does these on the preview build)
 
-Run: `npm run build && npm run preview`, then open the address it prints (use the lab address `https://lab11126.labs.decoded.com:<port>` if the port is proxied). `npm run dev` serves on port 5002.
+Run: `VITE_PORT=5000 VITE_PUBLIC_HOSTNAME=app-lab11126.labs.decoded.com npm run dev`, then open https://app-lab11126.labs.decoded.com/proxy/ . (Lighthouse and the final timing checks were on `npm run build` + `npm run preview`.)
 
 | # | Check | Result | Who | Date |
 |---|---|---|---|---|

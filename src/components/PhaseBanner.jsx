@@ -1,4 +1,4 @@
-export default function PhaseBanner({ phase = 'alpha', feedbackHref = '#' }) {
+export default function PhaseBanner({ phase = 'alpha', feedbackHref = 'mailto:greenhomegrant-feedback@example.gov.uk' }) {
   return (
     <div className="govuk-phase-banner">
       <p className="govuk-phase-banner__content">

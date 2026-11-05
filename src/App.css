@@ -364,3 +364,110 @@ a:focus {
   .govuk-summary-list__value,
   .govuk-summary-list__actions { width: 100%; text-align: left; }
 }
+
+/* Links */
+.govuk-link {
+  color: var(--govuk-link-colour);
+  text-decoration: underline;
+}
+
+.govuk-link:hover {
+  color: #003078;
+}
+
+a:focus,
+.govuk-link:focus,
+.govuk-footer__link:focus,
+.govuk-back-link:focus {
+  outline: 3px solid transparent;
+  background-color: var(--govuk-focus-colour);
+  color: var(--govuk-black);
+  box-shadow: 0 -2px var(--govuk-focus-colour), 0 4px var(--govuk-black);
+  text-decoration: none;
+}
+
+h1:focus {
+  outline: none;
+}
+
+/* Skip link */
+.govuk-skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: var(--govuk-spacing-2) var(--govuk-spacing-3);
+  background: var(--govuk-focus-colour);
+  color: var(--govuk-black);
+  font-size: 19px;
+}
+
+.govuk-skip-link:focus {
+  left: var(--govuk-spacing-3);
+  top: var(--govuk-spacing-2);
+  z-index: 10;
+}
+
+/* Phase banner */
+.govuk-phase-banner {
+  padding: var(--govuk-spacing-2) 0;
+  border-bottom: 1px solid var(--govuk-mid-grey);
+}
+
+.govuk-phase-banner__content {
+  margin: 0;
+  font-size: 16px;
+  color: var(--govuk-black);
+}
+
+.govuk-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  margin-right: var(--govuk-spacing-2);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #003078;
+  background-color: #d2e2f1;
+}
+
+/* Footer */
+.govuk-footer {
+  padding: var(--govuk-spacing-6) 0;
+  border-top: 1px solid var(--govuk-mid-grey);
+  background: var(--govuk-light-grey);
+  font-size: 16px;
+}
+
+.govuk-footer__inline-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.govuk-footer__inline-list-item {
+  display: inline-block;
+  margin-right: var(--govuk-spacing-4);
+}
+
+.govuk-footer__link {
+  color: var(--govuk-link-colour);
+  display: inline-block;
+  min-height: 24px;
+}
+
+/* Hint text and legends */
+.govuk-hint {
+  margin: 0 0 var(--govuk-spacing-4);
+  color: var(--govuk-dark-grey);
+}
+
+.govuk-fieldset__legend {
+  margin-bottom: var(--govuk-spacing-4);
+  padding: 0;
+}
+
+/* Result panel for partial eligibility */
+.govuk-panel--partial {
+  background: #003078;
+}

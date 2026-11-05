@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import GovukHeader from './components/GovukHeader';
-// TODO: Mount PhaseBanner below GovukHeader — import PhaseBanner from './components/PhaseBanner';
-// TODO: Mount GovukFooter after the closing </main> — import GovukFooter from './components/GovukFooter';
+import PhaseBanner from './components/PhaseBanner';
+import GovukFooter from './components/GovukFooter';
 import StartPage from './pages/StartPage';
 import PropertyTypePage from './pages/PropertyTypePage';
 import OwnershipPage from './pages/OwnershipPage';
@@ -11,16 +12,22 @@ import CheckAnswersPage from './pages/CheckAnswersPage';
 import ResultPage from './pages/ResultPage';
 import AccessibilityStatementPage from './pages/AccessibilityStatementPage';
 
+const NO_ANSWERS = { propertyType: '', ownership: '', incomeBand: '', heating: '' };
+
 function App() {
-  // TODO: Add form state here (useState) to hold all question answers
-  // TODO: Pass state and setter to each page component via props
+  // All answers live here so they survive Back and Change.
+  // eslint-disable-next-line no-unused-vars
+  const [answers, setAnswers] = useState(NO_ANSWERS);
 
   return (
     <>
+      <a href="#main-content" className="govuk-skip-link">Skip to main content</a>
       <GovukHeader />
-      {/* TODO: Add <PhaseBanner phase="alpha" feedbackHref="#" /> here */}
       <div className="govuk-width-container">
-        <main className="govuk-main-wrapper" role="main">
+        <PhaseBanner phase="alpha" />
+      </div>
+      <div className="govuk-width-container">
+        <main className="govuk-main-wrapper" id="main-content">
           <Routes>
             <Route path="/" element={<StartPage />} />
             <Route path="/property-type" element={<PropertyTypePage />} />
@@ -33,7 +40,7 @@ function App() {
           </Routes>
         </main>
       </div>
-      {/* TODO: Add <GovukFooter /> here */}
+      <GovukFooter />
     </>
   );
 }

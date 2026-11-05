@@ -6,7 +6,6 @@ import StartPage from './pages/StartPage';
 import PropertyTypePage from './pages/PropertyTypePage';
 import OwnershipPage from './pages/OwnershipPage';
 import IncomePage from './pages/IncomePage';
-import InsulationPage from './pages/InsulationPage';
 import HeatingPage from './pages/HeatingPage';
 import CheckAnswersPage from './pages/CheckAnswersPage';
 import ResultPage from './pages/ResultPage';
@@ -27,7 +26,6 @@ function App() {
             <Route path="/property-type" element={<PropertyTypePage />} />
             <Route path="/ownership" element={<OwnershipPage />} />
             <Route path="/income" element={<IncomePage />} />
-            <Route path="/insulation" element={<InsulationPage />} />
             <Route path="/heating" element={<HeatingPage />} />
             <Route path="/check-answers" element={<CheckAnswersPage />} />
             <Route path="/result" element={<ResultPage />} />

@@ -471,3 +471,7 @@ h1:focus {
 .govuk-panel--partial {
   background: #003078;
 }
+
+.govuk-list--bullet {
+  list-style-type: disc;
+}

@@ -1,18 +1,28 @@
-// TODO: Import useNavigate from react-router-dom
-// TODO: Import GovukButton
+import { useNavigate } from 'react-router-dom';
+import GovukButton from '../components/GovukButton';
+import usePageTitle from '../hooks/usePageTitle';
 
 function StartPage() {
-  // TODO: Add navigation to /property-type on button click
+  const navigate = useNavigate();
+  usePageTitle('Start');
 
   return (
     <>
-      <h1 className="govuk-heading-xl">
-        Check if you can get a Green Home Grant
-      </h1>
+      <h1 className="govuk-heading-xl">Check if you can get a Green Home Grant</h1>
       <p className="govuk-body-l">
-        {/* TODO: Add a description of the service */}
+        Use this service to find out if you can get a grant towards home insulation and heat pumps.
+        You will answer 4 short questions.
       </p>
-      {/* TODO: Add a "Start now" button using GovukButton with variant="start" */}
+      <h2 className="govuk-heading-m">Who can use this service</h2>
+      <p className="govuk-body">The grant is only available to homeowners or landlords.</p>
+      <ul className="govuk-list govuk-list--bullet">
+        <li>You cannot get the grant if you rent your home.</li>
+        <li>You cannot get the grant for a flat or maisonette.</li>
+        <li>The property must be in the UK.</li>
+      </ul>
+      <GovukButton variant="start" onClick={() => navigate('/property-type')}>
+        Start now
+      </GovukButton>
     </>
   );
 }
